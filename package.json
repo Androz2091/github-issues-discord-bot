@@ -1,0 +1,15 @@
+{
+  "name": "github-issues-discord-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Androz2091 <androz2091@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^18.5.3",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1"
+  }
+}
