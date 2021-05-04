@@ -56,7 +56,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
                 title: message.content,
                 labels: ['bug']
             }).then((issue) => {
-                message.reply(`issue créée ${issue.data.url} ✅`).then((m: Message) => {
+                message.reply(`issue créée https://github.com/${process.env.GITHUB_REPO_OWNER}/${process.env.GITHUB_REPO_NAME}/issues/${issue.data.number} ✅`).then((m: Message) => {
                     setTimeout(() => m.delete(), 10000);
                 });
             });
