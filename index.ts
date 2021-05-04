@@ -39,6 +39,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
         confirmationMessage.delete();
         message.delete();
+        collector.stop();
 
         if (message.content === 'non') {
             reaction.users.remove(user.id);
@@ -46,7 +47,6 @@ client.on('messageReactionAdd', async (reaction, user) => {
                 setTimeout(() => m.delete(), 10000);
             });
         } else {
-            collector.stop();
             reaction.message.reactions.removeAll();
             const imageAttachments = reaction.message.attachments.filter((att) => ['jpg', 'png', 'webp', 'gif'].some((ext) => att.url.endsWith(`.${ext}`)));
             octokit.issues.create({
